@@ -123,33 +123,39 @@
 
     <section class="machine-section">
       <div class="wrap machine">
-        <div class="machine-visual" role="img" aria-label="Illustration of a compact tractor with loader and backhoe">
-          <svg class="tractor" viewBox="0 0 420 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <div class="machine-visual" role="img" aria-label="Illustration of a compact tractor with front loader and backhoe">
+          <svg class="tractor" viewBox="0 0 520 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
               <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#102010"/>
-                <stop offset="100%" stop-color="#0a120a"/>
+                <stop offset="0%" stop-color="#121c10"/>
+                <stop offset="70%" stop-color="#0b120b"/>
+                <stop offset="100%" stop-color="#081008"/>
               </linearGradient>
             </defs>
-            <rect width="420" height="240" fill="url(#field)"/>
-            <line x1="24" y1="186" x2="396" y2="186" stroke="#2a3d2a" stroke-width="2"/>
-            <g fill="none" stroke="#ff6a00" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round">
-              <path d="M78 168h46l12-34h88l10 34h52"/>
-              <rect x="168" y="86" width="72" height="50" rx="6"/>
-              <path d="M168 108h-28l-42 12"/>
-              <path d="M98 120 62 148l22 8"/>
-              <path d="M240 108h38l48 18"/>
-              <path d="M326 126v28l22 14"/>
-              <circle cx="128" cy="174" r="22"/>
-              <circle cx="128" cy="174" r="9"/>
-              <circle cx="292" cy="174" r="26"/>
-              <circle cx="292" cy="174" r="11"/>
-            </g>
-            <g fill="#ff6a00" opacity=".18">
-              <circle cx="128" cy="174" r="22"/>
-              <circle cx="292" cy="174" r="26"/>
-              <rect x="168" y="86" width="72" height="50" rx="6"/>
-            </g>
+            <rect width="520" height="280" fill="url(#field)"/>
+            <path d="M0 214h520" stroke="#2a3d2a" stroke-width="2"/>
+            <path d="M0 226h520" stroke="#1a281a" stroke-width="10" opacity=".5"/>
+            <!-- loader bucket -->
+            <path d="M46 168 92 132h34l-18 52H58z" fill="#ff6a00" opacity=".22" stroke="#ff6a00" stroke-width="3" stroke-linejoin="round"/>
+            <!-- loader arms -->
+            <path d="M118 146c38-8 78-10 118 4" fill="none" stroke="#ff6a00" stroke-width="7" stroke-linecap="round"/>
+            <path d="M118 158c36-6 74-8 112 6" fill="none" stroke="#ff9100" stroke-width="3.5" stroke-linecap="round" opacity=".7"/>
+            <!-- hood / chassis -->
+            <path d="M168 132h108l18 52H158z" fill="#ff6a00" opacity=".16" stroke="#ff6a00" stroke-width="3" stroke-linejoin="round"/>
+            <!-- cab -->
+            <path d="M248 86h78l18 46H236z" fill="#ff6a00" opacity=".2" stroke="#ff6a00" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M258 98h52l10 24h-70z" fill="none" stroke="#ff9100" stroke-width="2.4"/>
+            <!-- rear fender / deck -->
+            <path d="M318 132h62l8 52h-86z" fill="#ff6a00" opacity=".14" stroke="#ff6a00" stroke-width="3" stroke-linejoin="round"/>
+            <!-- backhoe boom -->
+            <path d="M368 128c28-36 62-42 86-18" fill="none" stroke="#ff6a00" stroke-width="7" stroke-linecap="round"/>
+            <path d="M454 114 478 168" fill="none" stroke="#ff6a00" stroke-width="6" stroke-linecap="round"/>
+            <path d="M468 164h28l-6 18h-30z" fill="#ff6a00" opacity=".22" stroke="#ff6a00" stroke-width="3" stroke-linejoin="round"/>
+            <!-- wheels -->
+            <circle cx="196" cy="198" r="28" fill="#0a120a" stroke="#ff6a00" stroke-width="4"/>
+            <circle cx="196" cy="198" r="12" fill="none" stroke="#ff9100" stroke-width="3"/>
+            <circle cx="338" cy="194" r="36" fill="#0a120a" stroke="#ff6a00" stroke-width="4"/>
+            <circle cx="338" cy="194" r="15" fill="none" stroke="#ff9100" stroke-width="3"/>
           </svg>
           <div class="machine-caption">
             <strong>Kubota L-47</strong>

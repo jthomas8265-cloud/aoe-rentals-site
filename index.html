@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AOE Rentals | Kubota Tractor Rental · Ranchester, WY</title>
+  <meta name="description" content="Agent Orange Equipment Rentals — Kubota L-47 tractor rental near Ranchester and Sheridan, Wyoming. Delivery within ~25 miles. Call or message to book." />
+  <meta name="theme-color" content="#0b0f0c" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231a2e1a'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-size='28' font-family='system-ui' fill='%237dcf8a'%3EAOE%3C/text%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --bg: #0b0f0c;
+      --bg2: #121a14;
+      --card: #162019;
+      --line: #243028;
+      --text: #e8f0ea;
+      --muted: #9aab9e;
+      --accent: #7dcf8a;
+      --accent2: #c4a35a;
+      --danger: #e07060;
+      --radius: 16px;
+      --shadow: 0 12px 40px rgba(0,0,0,.35);
+      --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: radial-gradient(1200px 600px at 10% -10%, #1a3320 0%, transparent 55%),
+                  radial-gradient(900px 500px at 100% 0%, #2a2414 0%, transparent 50%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { width: min(1080px, calc(100% - 2rem)); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(11,15,12,.82);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; padding: .9rem 0;
+    }
+    .brand { display: flex; align-items: center; gap: .7rem; color: inherit; text-decoration: none; }
+    .logo {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: linear-gradient(145deg, #254029, #152018);
+      border: 1px solid #34553a;
+      display: grid; place-items: center;
+      font-weight: 800; font-size: .72rem; letter-spacing: .04em; color: var(--accent);
+    }
+    .brand strong { display: block; font-size: 1rem; letter-spacing: .02em; }
+    .brand span { display: block; font-size: .72rem; color: var(--muted); }
+    .nav-links { display: flex; gap: .9rem; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+    .nav-links a { color: var(--muted); font-size: .92rem; text-decoration: none; }
+    .nav-links a:hover { color: var(--text); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: .4rem;
+      border-radius: 999px; padding: .72rem 1.15rem; font-weight: 700;
+      border: 1px solid transparent; cursor: pointer; text-decoration: none !important;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--accent); color: #0b140e; }
+    .btn-primary:hover { background: #96dfa0; }
+    .btn-ghost { background: transparent; color: var(--text); border-color: var(--line); }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .hero { padding: 3.2rem 0 2rem; display: grid; gap: 1.8rem; }
+    @media (min-width: 860px) {
+      .hero { grid-template-columns: 1.2fr .9fr; align-items: center; padding: 4rem 0 2.5rem; }
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: .45rem;
+      font-size: .78rem; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--accent2); font-weight: 700;
+    }
+    h1 {
+      margin: .55rem 0 .8rem; font-size: clamp(2rem, 4.5vw, 3.1rem);
+      line-height: 1.08; letter-spacing: -.02em;
+    }
+    .lede { color: var(--muted); font-size: 1.08rem; max-width: 38rem; margin: 0 0 1.4rem; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: .7rem; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.2rem; }
+    .pill {
+      font-size: .8rem; color: var(--muted); border: 1px solid var(--line);
+      background: rgba(255,255,255,.02); border-radius: 999px; padding: .35rem .7rem;
+    }
+    .hero-card {
+      background: linear-gradient(180deg, #1a2620, var(--card));
+      border: 1px solid var(--line); border-radius: calc(var(--radius) + 4px);
+      box-shadow: var(--shadow); padding: 1.25rem;
+    }
+    .hero-card h2 { margin: 0 0 .8rem; font-size: 1.05rem; }
+    .rate {
+      display: flex; justify-content: space-between; align-items: baseline;
+      gap: 1rem; padding: .75rem 0; border-bottom: 1px solid var(--line);
+    }
+    .rate:last-of-type { border-bottom: 0; }
+    .rate b { font-size: 1.25rem; color: var(--accent); }
+    .rate small { color: var(--muted); display: block; font-weight: 500; }
+    .note { margin: .9rem 0 0; font-size: .85rem; color: var(--muted); }
+    section { padding: 2.2rem 0; }
+    .section-title { margin: 0 0 .35rem; font-size: 1.55rem; }
+    .section-sub { margin: 0 0 1.3rem; color: var(--muted); max-width: 40rem; }
+    .grid { display: grid; gap: 1rem; }
+    @media (min-width: 720px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } .grid.cols-2 { grid-template-columns: 1fr 1fr; } }
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 1.15rem 1.2rem; box-shadow: 0 8px 24px rgba(0,0,0,.18);
+    }
+    .card h3 { margin: 0 0 .45rem; font-size: 1.05rem; }
+    .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+    .icon {
+      width: 36px; height: 36px; border-radius: 10px; margin-bottom: .7rem;
+      display: grid; place-items: center; background: #1e2d22; color: var(--accent);
+      border: 1px solid #314838; font-size: 1rem;
+    }
+    .machine {
+      display: grid; gap: 1.2rem; align-items: start;
+    }
+    @media (min-width: 800px) { .machine { grid-template-columns: 1.1fr .9fr; } }
+    .machine-visual {
+      min-height: 220px; border-radius: var(--radius); border: 1px solid var(--line);
+      background:
+        linear-gradient(160deg, rgba(125,207,138,.12), transparent 45%),
+        linear-gradient(20deg, #101611, #1c281f 60%, #2a2418);
+      display: grid; place-items: center; padding: 1.5rem; text-align: center;
+    }
+    .machine-visual strong { display: block; font-size: 1.4rem; margin-bottom: .3rem; }
+    .machine-visual span { color: var(--muted); font-size: .95rem; }
+    ul.check { margin: .6rem 0 0; padding: 0; list-style: none; }
+    ul.check li {
+      position: relative; padding-left: 1.35rem; margin: .45rem 0; color: var(--muted);
+    }
+    ul.check li::before {
+      content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 800;
+    }
+    .contact-box {
+      display: grid; gap: 1rem;
+    }
+    @media (min-width: 720px) { .contact-box { grid-template-columns: 1.2fr .8fr; } }
+    .big-phone {
+      font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; letter-spacing: .01em;
+      color: var(--text); text-decoration: none;
+    }
+    .big-phone:hover { color: var(--accent); }
+    footer {
+      border-top: 1px solid var(--line); margin-top: 2rem; padding: 1.5rem 0 2.2rem;
+      color: var(--muted); font-size: .85rem;
+    }
+    footer .foot {
+      display: flex; flex-wrap: wrap; gap: .8rem 1.5rem; justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">
+        <div class="logo">AOE</div>
+        <div>
+          <strong>AOE Rentals</strong>
+          <span>Agent Orange Equipment Rentals LLC</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#rates">Rates</a>
+        <a href="#how">How it works</a>
+        <a href="#area">Service area</a>
+        <a class="btn btn-primary" href="tel:+13072187870">Call (307) 218-7870</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow">Ranchester · Sheridan County · Wyoming</div>
+        <h1>Kubota rental without the shop runaround.</h1>
+        <p class="lede">
+          Book the 2017 Kubota L-47 for your place or job site. We deliver within about 25 miles of Ranchester.
+          Hands-off and straightforward — call or message to check availability.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="tel:+13072187870">Call to book</a>
+          <a class="btn btn-ghost" href="sms:+13072187870">Text the shop line</a>
+          <a class="btn btn-ghost" href="#rates">See rates</a>
+        </div>
+        <div class="pill-row">
+          <span class="pill">Delivery ~25 miles</span>
+          <span class="pill">Weekly free delivery in area</span>
+          <span class="pill">Mon–Fri 8–5 · by availability</span>
+        </div>
+      </div>
+      <aside class="hero-card" id="rates">
+        <h2>2017 Kubota L-47</h2>
+        <div class="rate">
+          <div>
+            <strong>Daily</strong>
+            <small>8 meter hours</small>
+          </div>
+          <b>$200<span style="font-size:.7em;color:var(--muted);font-weight:600">/day</span></b>
+        </div>
+        <div class="rate">
+          <div>
+            <strong>Weekly</strong>
+            <small>50 hours · free local delivery</small>
+          </div>
+          <b>$700<span style="font-size:.7em;color:var(--muted);font-weight:600">/wk</span></b>
+        </div>
+        <div class="rate">
+          <div>
+            <strong>Overtime</strong>
+            <small>Beyond included hours</small>
+          </div>
+          <b>$50<span style="font-size:.7em;color:var(--muted);font-weight:600">/hr</span></b>
+        </div>
+        <div class="rate">
+          <div>
+            <strong>Deposit</strong>
+            <small>Refundable hold</small>
+          </div>
+          <b>$500</b>
+        </div>
+        <p class="note">Delivery extra on daily jobs. Story / mountain runs not available. You operate — we deliver and pick up.</p>
+      </aside>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Built for local work</h2>
+        <p class="section-sub">Small crew, real machine, no franchise markup. Good fit for ranch, driveway, and light construction jobs around Sheridan County.</p>
+        <div class="grid cols-3">
+          <div class="card">
+            <div class="icon">1</div>
+            <h3>Call or text</h3>
+            <p>Hit the shop line. We’ll confirm dates, delivery address, and send the rental agreement.</p>
+          </div>
+          <div class="card">
+            <div class="icon">2</div>
+            <h3>We drop it off</h3>
+            <p>Scheduled delivery in the Ranchester area. Weekly rentals include free delivery in range.</p>
+          </div>
+          <div class="card">
+            <div class="icon">3</div>
+            <h3>You run the job</h3>
+            <p>You operate. When you’re done, we pick up. Deposit returns after a clean handback.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="wrap machine">
+        <div class="machine-visual">
+          <div>
+            <strong>Kubota L-47</strong>
+            <span>Loader + 10 ft backhoe · dirt bucket</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>What’s included</h3>
+          <ul class="check">
+            <li>2017 Kubota L-47 with TL1300 loader</li>
+            <li>Standard dirt bucket (hitch ball on lip)</li>
+            <li>BT1000 10 ft backhoe</li>
+            <li>Delivery / pickup coordination</li>
+            <li>Written rental agreement + deposit hold</li>
+          </ul>
+          <p class="note" style="margin-top:1rem">Customer provides proof of insurance and is the sole operator. Fuel is on you — return it like you got it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="area">
+      <div class="wrap">
+        <h2 class="section-title">Service area</h2>
+        <p class="section-sub">Based at 310 Coffeen St, Ranchester, WY. Typical delivery radius ~25 miles — Sheridan, Dayton, Parkman. Story is outside range for this load.</p>
+        <div class="grid cols-2 contact-box">
+          <div class="card">
+            <h3>Book or ask a question</h3>
+            <p style="margin-bottom:.8rem">Shop line (calls &amp; texts):</p>
+            <a class="big-phone" href="tel:+13072187870">(307) 218-7870</a>
+            <p class="note">Hours: Monday–Friday 8:00 AM–5:00 PM, upon availability. Weekend jobs by arrangement.</p>
+            <div class="cta-row" style="margin-top:1rem">
+              <a class="btn btn-primary" href="tel:+13072187870">Call now</a>
+              <a class="btn btn-ghost" href="sms:+13072187870?&body=Hi%20AOE%20-%20I'd%20like%20to%20check%20Kubota%20availability">Text us</a>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Business details</h3>
+            <p>
+              <strong style="color:var(--text)">Agent Orange Equipment Rentals LLC</strong><br />
+              DBA AOE Rentals<br />
+              310 Coffeen St<br />
+              Ranchester, WY 82839<br /><br />
+              EIN on file · Wyoming LLC
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>© <span id="y"></span> Agent Orange Equipment Rentals LLC · AOE Rentals</div>
+      <div>aoerentalswyo.com · Ranchester, Wyoming</div>
+    </div>
+  </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>

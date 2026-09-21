@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#0a140a"/>
+  <path d="M0 48h64v16H0z" fill="#ff6a00"/>
+  <path d="M0 48h64v4H0z" fill="#ff9100"/>
+  <text x="32" y="36" text-anchor="middle" fill="#ff6a00" font-size="20" font-weight="800" font-family="Arial Narrow, Arial, sans-serif">AOE</text>
+</svg>

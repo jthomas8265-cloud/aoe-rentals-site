@@ -4,7 +4,7 @@
   --card: #0e160e;
   --line: #243224;
   --text: #eef3ee;
-  --muted: #9aab9a;
+  --muted: #a7b6a7;
   --accent: #ff6a00;
   --accent2: #ff9100;
   --ink: #1a1208;
@@ -535,9 +535,9 @@ footer {
   font-weight: 700;
 }
 
-.foot-brand span,
-.foot-meta span,
-.foot-meta a { display: block; }
+.foot-brand > span,
+.foot-meta > span,
+.foot-meta > a { display: block; }
 
 .foot-meta {
   display: grid;

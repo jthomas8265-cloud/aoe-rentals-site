@@ -410,29 +410,35 @@ section { padding: 2.6rem 0; }
 .machine {
   display: grid;
   gap: 1.2rem;
-  align-items: stretch;
+  align-items: start;
 }
 
 .machine-visual {
-  min-height: 240px;
   border-radius: var(--radius);
   border: 1px solid var(--line);
-  background: linear-gradient(160deg, rgba(255, 106, 0, .12), transparent 46%), #0a120a;
-  display: grid;
-  align-content: center;
-  padding: 1.1rem 1.1rem 1.2rem;
+  background: #070c07;
+  box-shadow: inset 0 3px 0 var(--accent);
   overflow: hidden;
 }
 
-.tractor {
+.machine-photo {
+  margin: 0;
+}
+
+.machine-photo img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center 42%;
+  background: #0a120a;
 }
 
 .machine-caption {
   text-align: center;
-  margin-top: .35rem;
+  margin: 0;
+  padding: .85rem 1rem .15rem;
 }
 
 .machine-caption strong {
@@ -445,6 +451,45 @@ section { padding: 2.6rem 0; }
 .machine-caption span {
   color: var(--muted);
   font-size: .95rem;
+}
+
+.machine-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .7rem;
+  padding: .8rem 1rem 1.05rem;
+}
+
+.machine-gallery figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.machine-gallery img {
+  display: block;
+  width: 100%;
+  height: 7.5rem;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #0a120a;
+}
+
+.machine-gallery figure:first-child img {
+  object-position: center 58%;
+}
+
+.machine-gallery figure:last-child img {
+  object-position: center 40%;
+}
+
+.machine-gallery figcaption {
+  margin-top: .35rem;
+  color: var(--muted);
+  font-size: .78rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .included .note { margin-top: 1.1rem; }
@@ -607,6 +652,8 @@ footer {
   .foot-meta { text-align: left; }
 
   .brand-text span { max-width: 14rem; }
+
+  .machine-gallery img { height: 6.4rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

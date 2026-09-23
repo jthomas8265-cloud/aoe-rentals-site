@@ -581,8 +581,27 @@ footer {
 }
 
 .foot-brand > span,
+.foot-brand address,
 .foot-meta > span,
 .foot-meta > a { display: block; }
+
+.foot-brand address {
+  font-style: normal;
+}
+
+.foot-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem 1rem;
+  justify-content: flex-end;
+}
+
+.foot-meta .foot-legal a {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.foot-meta .foot-legal a:hover { color: var(--text); }
 
 .foot-meta {
   display: grid;
@@ -650,10 +669,45 @@ footer {
   }
 
   .foot-meta { text-align: left; }
+  .foot-legal { justify-content: flex-start; }
 
   .brand-text span { max-width: 14rem; }
 
   .machine-gallery img { height: 6.4rem; }
+}
+
+.legal {
+  padding: 2.4rem 0 3.2rem;
+  max-width: 44rem;
+}
+
+.legal h1 { max-width: 16ch; }
+
+.legal h2 {
+  margin: 1.7rem 0 .45rem;
+  font-family: var(--display);
+  font-size: 1.45rem;
+  letter-spacing: .03em;
+}
+
+.legal p,
+.legal li {
+  color: var(--muted);
+}
+
+.legal p { margin: 0 0 .85rem; }
+
+.legal ul {
+  margin: .2rem 0 1rem;
+  padding-left: 1.15rem;
+}
+
+.legal li { margin: .28rem 0; }
+
+.legal .updated {
+  margin: 0 0 1.2rem;
+  color: var(--muted);
+  font-size: .92rem;
 }
 
 @media (prefers-reduced-motion: reduce) {

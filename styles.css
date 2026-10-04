@@ -710,6 +710,89 @@ footer {
   font-size: .92rem;
 }
 
+.contact-extra {
+  margin: .95rem 0 0;
+  font-size: .9rem;
+}
+
+.optin-panel {
+  margin: 1.15rem 0 1.45rem;
+  padding: 1.25rem 1.25rem 1.3rem;
+  background: linear-gradient(180deg, #122616, var(--card));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.optin-panel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 4px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+
+.optin-kicker {
+  margin: .2rem 0 .35rem;
+}
+
+.optin-keyword {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
+  letter-spacing: .14em;
+  line-height: .95;
+  color: var(--accent);
+}
+
+.optin-to {
+  margin: .55rem 0 .15rem;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.optin-number {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.7rem, 5vw, 2.15rem);
+  letter-spacing: .03em;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.optin-number:hover {
+  color: var(--accent2);
+  text-decoration: none;
+}
+
+.optin-panel .note { margin-top: .85rem; }
+
+.legal .fact-list {
+  list-style: none;
+  margin: .3rem 0 1.1rem;
+  padding: 0;
+}
+
+.legal .fact-list li {
+  margin: 0;
+  padding: .75rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.legal .fact-list strong {
+  display: block;
+  color: var(--text);
+  font-family: var(--display);
+  letter-spacing: .04em;
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .btn:hover { transform: none; }

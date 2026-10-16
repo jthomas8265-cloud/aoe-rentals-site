@@ -12,6 +12,15 @@
  },
  "listings": [
   {
+   "name": "Mullinax (Sand & Gravel, Custom Crushing)",
+   "town": "Sheridan",
+   "phone": "(307) 674-4466",
+   "website": "https://www.mullinax-inc.com/",
+   "categories": [
+    "Materials"
+   ]
+  },
+  {
    "name": "Wyoming Cat Rental (Wyoming Rents)",
    "town": "Sheridan",
    "phone": "(307) 673-0026",
@@ -67,7 +76,7 @@
     "Dirt work / excavation",
     "Snow removal",
     "Hauling",
-    "Gravel & aggregate"
+    "Materials"
    ]
   },
   {
@@ -137,22 +146,13 @@
    ]
   },
   {
-   "name": "Mullinax (Sand & Gravel, Custom Crushing)",
-   "town": "Sheridan",
-   "phone": "(307) 674-4466",
-   "website": "https://www.mullinax-inc.com/",
-   "categories": [
-    "Gravel & aggregate"
-   ]
-  },
-  {
    "name": "Farmers Co-op",
    "town": "Sheridan",
-   "phone": "(307) 672-2473",
+   "phone": "(307) 674-7463",
    "website": "https://sheridancoop.com/",
    "categories": [
-    "Ag services",
-    "Materials"
+    "Ag supply",
+    "Ag services"
    ]
   },
   {
@@ -161,8 +161,7 @@
    "phone": "(307) 672-2475",
    "website": "https://sheridanseed.com/",
    "categories": [
-    "Ag services",
-    "Materials"
+    "Ag supply"
    ]
   },
   {

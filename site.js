@@ -18,7 +18,7 @@ if (briefEl) fetch(base()+"data/brief.html",{cache:"no-cache"}).then(function(r)
 }).catch(function(){ return sampleBrief(); }).catch(function(){briefEl.textContent="Today's brief isn't available yet. Check back soon.";});
 var dirEl = document.getElementById("dir-body");
 if (dirEl) fetch(base()+"data/directory.json").then(function(r){return r.json();}).then(function(d){
-  var cats=["Equipment rental","Dirt work / excavation","Fencing","Snow removal","Hauling","Materials","Ag services"];
+  var cats=["Equipment rental","Dirt work / excavation","Fencing","Snow removal","Hauling","Materials","Ag supply","Ag services"];
   var tel=function(p){return p?'<a href="tel:+1'+p.replace(/\D/g,"")+'">'+esc(p)+'</a>':'';};
   var f=d.featured;
   document.getElementById("dir-featured").innerHTML='<p class="card-kicker">Featured listing</p><h3>'+esc(f.name)+'</h3><p>'+esc(f.blurb)+'</p><p>'+esc((f.categories||[f.category]).join(', '))+' · '+esc(f.town)+'</p><p>Call '+tel(f.phone)+' · Text '+tel(f.text)+'</p>';

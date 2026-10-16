@@ -848,3 +848,6 @@ footer {
 .ad-price{font-size:1.1rem;color:var(--muted);} .ad-price b{color:var(--accent);font-size:1.4rem;}
 .dir-teaser{margin:1rem 0 0;}
 @media (max-width:640px){.ad-card{grid-template-columns:1fr;}.ad-photo img{height:200px;}}
+/* Floating site-wide sound button */
+.sound-fab{position:fixed;right:18px;bottom:18px;z-index:50;width:52px;height:52px;border-radius:50%;border:1px solid var(--accent);background:rgba(8,13,8,.92);color:var(--text);font-size:1.4rem;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;}
+.sound-fab:hover{background:#142014;}

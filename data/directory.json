@@ -80,6 +80,46 @@
    ]
   },
   {
+   "name": "Ace Hardware of Sheridan",
+   "town": "Sheridan",
+   "phone": "(307) 672-5889",
+   "website": "https://www.acehardware.com/store-details/11883",
+   "categories": [
+    "Materials"
+   ],
+   "note": "1447 Coffeen Ave. Hardware, paint, plumbing, electrical, tools."
+  },
+  {
+   "name": "Mead Lumber of Sheridan",
+   "town": "Sheridan",
+   "phone": "(307) 673-0786",
+   "website": "https://meadlumber.com/locations/mead-lumber-of-sheridan/",
+   "categories": [
+    "Materials"
+   ],
+   "note": "1836 S Sheridan Ave. Lumberyard and building materials."
+  },
+  {
+   "name": "Bloedorns Lumber",
+   "town": "Sheridan",
+   "phone": "(307) 672-2471",
+   "website": "https://www.bloedorns.com/sheridan-wyoming",
+   "categories": [
+    "Materials"
+   ],
+   "note": "860 Riverside St. Lumber and building materials."
+  },
+  {
+   "name": "Wyoming Building Supply",
+   "town": "Sheridan",
+   "phone": "(307) 674-4699",
+   "website": "https://wyomingbuildingsupply.com/locations/sheridan/",
+   "categories": [
+    "Materials"
+   ],
+   "note": "43 E 5th St. Windows, doors, cabinets, countertops."
+  },
+  {
    "name": "Town and Country Fencing",
    "town": "Sheridan",
    "phone": "(307) 349-2701",
@@ -124,7 +164,8 @@
    "phone": "(307) 675-1268",
    "website": "https://www.sheridanlawnandlandscaping.com/",
    "categories": [
-    "Snow removal"
+    "Snow removal",
+    "Trades & supplies"
    ]
   },
   {
@@ -142,7 +183,8 @@
    "phone": "(307) 674-7155",
    "website": "https://customsprinklerandlandscaping.com/",
    "categories": [
-    "Snow removal"
+    "Snow removal",
+    "Trades & supplies"
    ]
   },
   {
@@ -163,6 +205,26 @@
    "categories": [
     "Ag supply"
    ]
+  },
+  {
+   "name": "Shipton's Big R",
+   "town": "Sheridan",
+   "phone": "(307) 674-6471",
+   "website": "https://shiptonsbigr.com/",
+   "categories": [
+    "Ag supply"
+   ],
+   "note": "2049 Sugarland Dr. Farm and ranch store: feed, fencing, livestock and pet supplies, bulk propane."
+  },
+  {
+   "name": "Tractor Supply",
+   "town": "Sheridan",
+   "phone": "(307) 672-1709",
+   "website": "https://www.tractorsupply.com/tsc/store_Sheridan-WY-82801_1916",
+   "categories": [
+    "Ag supply"
+   ],
+   "note": "1140 E Brundage Ln. Feed, fencing, farm supplies, trailer rental, propane refill."
   },
   {
    "name": "U-Haul at RHI PowerSports (Neighborhood Dealer)",
@@ -213,6 +275,76 @@
     "Dealers"
    ],
    "note": "1851 Commercial Ave. Bobcat, Massey Ferguson, Hesston, Challenger and Vermeer hay equipment, plus rentals."
+  },
+  {
+   "name": "Legacy Irrigation & Supply (formerly Mullinax Irrigation)",
+   "town": "Sheridan",
+   "phone": "(307) 381-2712",
+   "website": "https://legacyirr.com/",
+   "categories": [
+    "Trades & supplies"
+   ],
+   "note": "615 Fort Rd. Irrigation design, install, service; pipe, pumps, sprinklers; Valley pivot dealer."
+  },
+  {
+   "name": "307 WildCat Well Service",
+   "town": "Sheridan",
+   "phone": "(307) 217-2155",
+   "website": "https://307wildcat.com/",
+   "categories": [
+    "Trades & supplies"
+   ],
+   "note": "24 Dow Rd. Water well drilling and well service."
+  },
+  {
+   "name": "Precision Excavation & Septic Systems",
+   "town": "Sheridan",
+   "phone": "(307) 752-3312",
+   "website": "https://precisionexcavationwy.com/",
+   "categories": [
+    "Trades & supplies"
+   ],
+   "note": "1773 W 15th St. Septic systems and excavation."
+  },
+  {
+   "name": "Big Horn Sanitation",
+   "town": "Sheridan",
+   "phone": "(307) 674-7911",
+   "website": "https://www.mapquest.com/us/wyoming/big-horn-sanitation-10163602",
+   "categories": [
+    "Trades & supplies"
+   ],
+   "note": "1804 E Brundage Ln. Septic tank pumping, concrete septic tanks, portable toilets."
+  },
+  {
+   "name": "Gunderson Plumbing & Heating",
+   "town": "Sheridan",
+   "phone": "(307) 672-7115",
+   "website": "https://ezlocal.com/wy/sheridan/plumber",
+   "categories": [
+    "Trades & supplies"
+   ],
+   "note": "332 W Nebraska St. Plumbing, heating, A/C."
+  },
+  {
+   "name": "Varah Plumbing & Heating",
+   "town": "Sheridan",
+   "phone": "(307) 673-0699",
+   "website": "https://www.chamberofcommerce.com/business-directory/wyoming/sheridan/plumber/4973306-varah-plumbing-heating",
+   "categories": [
+    "Trades & supplies"
+   ],
+   "note": "2028 Papago Dr. Plumbing and heating."
+  },
+  {
+   "name": "Northern Mechanical LLC",
+   "town": "Sheridan",
+   "phone": "(307) 763-3482",
+   "website": "https://www.chamberofcommerce.com/business-directory/wyoming/sheridan/plumber/24719394-northern-mechanical-llc",
+   "categories": [
+    "Trades & supplies"
+   ],
+   "note": "904 4th Ave E. Plumbing and mechanical."
   }
  ]
 }

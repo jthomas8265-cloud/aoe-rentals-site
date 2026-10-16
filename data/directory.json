@@ -12,6 +12,15 @@
  },
  "listings": [
   {
+   "name": "Mullinax (Sand & Gravel, Custom Crushing)",
+   "town": "Sheridan",
+   "phone": "(307) 674-4466",
+   "website": "https://www.mullinax-inc.com/",
+   "categories": [
+    "Materials"
+   ]
+  },
+  {
    "name": "Wyoming Cat Rental (Wyoming Rents)",
    "town": "Sheridan",
    "phone": "(307) 673-0026",
@@ -67,7 +76,7 @@
     "Dirt work / excavation",
     "Snow removal",
     "Hauling",
-    "Gravel & aggregate"
+    "Materials"
    ]
   },
   {
@@ -137,15 +146,6 @@
    ]
   },
   {
-   "name": "Mullinax (Sand & Gravel, Custom Crushing)",
-   "town": "Sheridan",
-   "phone": "(307) 674-4466",
-   "website": "https://www.mullinax-inc.com/",
-   "categories": [
-    "Gravel & aggregate"
-   ]
-  },
-  {
    "name": "Farmers Co-op",
    "town": "Sheridan",
    "phone": "(307) 672-2473",
@@ -182,6 +182,60 @@
     "Hauling"
    ],
    "note": "2524 Heartland Dr. Rents moving trucks and trailers, plus towing gear. Rates vary by date; see the location page."
+  },
+  {
+   "name": "The Home Depot #6004 (2050 Coffeen Ave)",
+   "town": "Sheridan",
+   "phone": "(307) 674-6669",
+   "website": "https://www.homedepot.com/l/Sheridan/WY/Sheridan/82801/6004",
+   "categories": [
+    "Materials"
+   ]
+  },
+  {
+   "name": "Ace Hardware of Sheridan (1447 Coffeen Ave)",
+   "town": "Sheridan",
+   "phone": "(307) 672-5889",
+   "website": "https://www.acehardware.com/store-details/11883",
+   "categories": [
+    "Materials"
+   ]
+  },
+  {
+   "name": "Mead Lumber of Sheridan (1836 S Sheridan Ave)",
+   "town": "Sheridan",
+   "phone": "(307) 673-0786",
+   "website": "https://meadlumber.com/locations/mead-lumber-of-sheridan/",
+   "categories": [
+    "Materials"
+   ]
+  },
+  {
+   "name": "Bloedorns Lumber (860 Riverside St)",
+   "town": "Sheridan",
+   "phone": "(307) 672-2471",
+   "website": "https://www.bloedorns.com/sheridan-wyoming",
+   "categories": [
+    "Materials"
+   ]
+  },
+  {
+   "name": "Wyoming Building Supply (43 E 5th St)",
+   "town": "Sheridan",
+   "phone": "(307) 674-4699",
+   "website": "https://wyomingbuildingsupply.com/locations/sheridan/",
+   "categories": [
+    "Materials"
+   ]
+  },
+  {
+   "name": "Tractor Supply (1140 E Brundage Ln)",
+   "town": "Sheridan",
+   "phone": "(307) 672-1709",
+   "website": "https://www.tractorsupply.com/tsc/store_Sheridan-WY-82801_1916",
+   "categories": [
+    "Materials"
+   ]
   }
  ]
 }

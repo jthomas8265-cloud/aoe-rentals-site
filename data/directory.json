@@ -183,6 +183,36 @@
     "Hauling"
    ],
    "note": "2524 Heartland Dr. Rents moving trucks and trailers, plus towing gear. Rates vary by date; see the location page."
+  },
+  {
+   "name": "C & B Operations (John Deere)",
+   "town": "Sheridan",
+   "phone": "(307) 673-4624",
+   "website": "https://deerequipment.com/locations/sheridan-wy/",
+   "categories": [
+    "Dealers"
+   ],
+   "note": "2491 Heartland Dr. John Deere sales, parts and service."
+  },
+  {
+   "name": "Heartland Kubota",
+   "town": "Sheridan",
+   "phone": "(307) 672-8011",
+   "website": "https://www.heartlandkubota.com/",
+   "categories": [
+    "Dealers"
+   ],
+   "note": "2450 Heartland Dr. Authorized Kubota dealer, independently owned since 1996."
+  },
+  {
+   "name": "C & K Equipment Sales",
+   "town": "Sheridan",
+   "phone": "(307) 674-6405",
+   "website": "https://www.cksales.net/",
+   "categories": [
+    "Dealers"
+   ],
+   "note": "1851 Commercial Ave. Bobcat, Massey Ferguson, Hesston, Challenger and Vermeer hay equipment, plus rentals."
   }
  ]
 }

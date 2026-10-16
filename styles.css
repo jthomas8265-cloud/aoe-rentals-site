@@ -819,3 +819,14 @@ footer {
 .brief-real p{color:var(--muted);}
 .brief-real table{border-collapse:collapse;width:100%;}
 .brief-real td,.brief-real th{border:1px solid var(--line);padding:.3rem .5rem;}
+.brief-grid.brief-real{margin-top:.25rem;}
+.brief-real > section > header{margin-bottom:.6rem;padding-bottom:.5rem;border-bottom:1px solid var(--line);}
+.brief-real > section > header h2{margin-top:0;}
+.brief-real > section > header p{margin:0;}
+.brief-real section section{margin-bottom:1rem;}
+.brief-real footer{margin-top:.8rem;padding-top:.6rem;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;}
+.brief-real li{margin-bottom:.35rem;}
+.brief-real strong{color:var(--text);}
+.brief-real section{padding:0;}
+.brief-real header{position:static;backdrop-filter:none;background:none;box-shadow:none;z-index:auto;}
+.brief-real footer{padding-bottom:0;}

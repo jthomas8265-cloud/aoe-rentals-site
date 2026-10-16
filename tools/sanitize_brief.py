@@ -4,7 +4,7 @@ Usage: python3 tools/sanitize_brief.py /workspace/community-brief/brief-latest.h
 Allowlist tags only; drops script/style/iframe/etc. and all on* attrs; keeps http(s)/mailto links."""
 import sys, html
 from html.parser import HTMLParser
-OK = {"section","div","article","header","h2","h3","h4","p","ul","ol","li","a","strong","b","em","i","small","span","time","br","hr","table","thead","tbody","tr","th","td"}
+OK = {"section","footer","div","article","header","h2","h3","h4","p","ul","ol","li","a","strong","b","em","i","small","span","time","br","hr","table","thead","tbody","tr","th","td"}
 DROP = {"script","style","iframe","object","embed","form","noscript","template","svg","head","title","meta","link"}
 VOID = {"br","hr"}
 class S(HTMLParser):

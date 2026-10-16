@@ -14,7 +14,7 @@ if (briefEl) fetch(base()+"data/brief.html",{cache:"no-cache"}).then(function(r)
   if(!h.trim()) throw 0;
   briefEl.classList.add("brief-real"); briefEl.innerHTML = h;
   var badge=document.querySelector(".brief-badge"); if(badge) badge.remove();
-  var lbl=document.getElementById("brief-label"); if(lbl) lbl.textContent="Compiled from public local sources. Links go to the original source.";
+  var lbl=document.getElementById("brief-label"); if(lbl) lbl.remove();
 }).catch(function(){ return sampleBrief(); }).catch(function(){briefEl.textContent="Today's brief isn't available yet. Check back soon.";});
 var dirEl = document.getElementById("dir-body");
 if (dirEl) fetch(base()+"data/directory.json").then(function(r){return r.json();}).then(function(d){

@@ -126,7 +126,8 @@
    "website": "https://www.townandcountryfencingwy.com/",
    "categories": [
     "Fencing",
-    "Snow removal"
+    "Snow removal",
+    "Welding & fabrication"
    ]
   },
   {
@@ -144,7 +145,8 @@
    "phone": "(307) 360-3153",
    "website": "http://www.clarkranchhorses.com/shieldfencing",
    "categories": [
-    "Fencing"
+    "Fencing",
+    "Welding & fabrication"
    ]
   },
   {
@@ -365,6 +367,78 @@
     "Welding gas & supplies"
    ],
    "note": "257 E Brundage St. Industrial gases (argon, oxygen, acetylene), welding equipment and consumables."
+  },
+  {
+   "name": "NAPA Auto Parts (Sheridan Auto Parts Solutions / SPB Inc.)",
+   "town": "Sheridan",
+   "phone": "(307) 674-6478",
+   "website": "https://www.napaonline.com/en/wy/sheridan/store/27392",
+   "categories": [
+    "Auto parts"
+   ],
+   "note": "2018 Coffeen Ave. Independently owned NAPA store (SPB Inc.)."
+  },
+  {
+   "name": "Lightning Automotive",
+   "town": "Sheridan",
+   "phone": "(307) 673-2872",
+   "website": "https://lightningautomotivewy.com/",
+   "categories": [
+    "Mechanic shops"
+   ],
+   "note": "1149 Coffeen Ave. Diagnostics and repair for all makes, local since 2020."
+  },
+  {
+   "name": "CW Auto Service",
+   "town": "Sheridan",
+   "phone": "(307) 461-2375",
+   "website": "https://cwautoservice.com/",
+   "categories": [
+    "Mechanic shops"
+   ],
+   "note": "2175 Skyline Dr. Diagnostics, engine, suspension and foreign repair."
+  },
+  {
+   "name": "L&H Industrial (Sheridan shop)",
+   "town": "Sheridan",
+   "phone": "(307) 674-4431",
+   "website": "https://www.lnh.net/locations/",
+   "categories": [
+    "Heavy equipment welding"
+   ],
+   "note": "1909 Commercial Ave. Heavy machine repair: welding, machining, hydraulic cylinders. Wyoming company based in Gillette."
+  },
+  {
+   "name": "LJ Wright Ironworks & Design",
+   "town": "Sheridan",
+   "phone": "(307) 672-0946",
+   "website": "https://ljwrightironworks.com/",
+   "categories": [
+    "Heavy equipment welding",
+    "Welding & fabrication"
+   ],
+   "note": "5407 Coffeen Ave. Construction, ag and irrigation equipment repair; custom metalwork."
+  },
+  {
+   "name": "ProWeld Fab and Machine",
+   "town": "Sheridan",
+   "phone": "(307) 763-1425",
+   "website": "https://www.proweldwy.com/",
+   "categories": [
+    "Heavy equipment welding",
+    "Welding & fabrication"
+   ],
+   "note": "Welding and machine shop with a mobile welding truck for on-site repairs."
+  },
+  {
+   "name": "Craftco",
+   "town": "Sheridan",
+   "phone": "(307) 672-9220",
+   "website": "https://craftco.com/welding-fabrication/",
+   "categories": [
+    "Welding & fabrication"
+   ],
+   "note": "680 Airfield Ln. Structural and custom fabrication, certified welders."
   }
  ]
 }

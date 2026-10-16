@@ -812,3 +812,10 @@ footer {
 .signup{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem;}
 .signup input{flex:1;min-width:200px;padding:.7rem;border-radius:10px;border:1px solid var(--line);background:var(--bg2);color:var(--text);}
 .promo-row{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:1rem;}
+.brief-real{display:block;color:var(--text);}
+.brief-real h2,.brief-real h3,.brief-real h4{font-family:var(--display);color:var(--accent2);margin:1rem 0 .3rem;}
+.brief-real ul{padding-left:1.1rem;color:var(--muted);margin:.2rem 0;}
+.brief-real a{color:var(--accent);overflow-wrap:anywhere;}
+.brief-real p{color:var(--muted);}
+.brief-real table{border-collapse:collapse;width:100%;}
+.brief-real td,.brief-real th{border:1px solid var(--line);padding:.3rem .5rem;}

@@ -2,10 +2,20 @@ var y = document.getElementById("y"); if (y) y.textContent = new Date().getFullY
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
 function base(){return document.body.getAttribute("data-base")||"";}
 var briefEl = document.getElementById("brief-body");
-if (briefEl) fetch(base()+"data/brief.json").then(function(r){return r.json();}).then(function(b){
-  document.getElementById("brief-label").textContent = b.label + " · " + b.updated;
-  briefEl.innerHTML = b.sections.map(function(s){return '<div class="brief-sec"><h3>'+esc(s.title)+'</h3><ul>'+s.items.map(function(i){return '<li>'+esc(i)+'</li>';}).join("")+'</ul></div>';}).join("");
-}).catch(function(){briefEl.textContent="Brief unavailable.";});
+function sampleBrief(){
+  return fetch(base()+"data/brief.json").then(function(r){return r.json();}).then(function(b){
+    document.getElementById("brief-label").textContent = b.label + " · " + b.updated;
+    briefEl.innerHTML = b.sections.map(function(s){return '<div class="brief-sec"><h3>'+esc(s.title)+'</h3><ul>'+s.items.map(function(i){return '<li>'+esc(i)+'</li>';}).join("")+'</ul></div>';}).join("");
+  });
+}
+if (briefEl) fetch(base()+"data/brief.html",{cache:"no-cache"}).then(function(r){
+  if(!r.ok) throw 0; return r.text();
+}).then(function(h){
+  if(!h.trim()) throw 0;
+  briefEl.classList.add("brief-real"); briefEl.innerHTML = h;
+  var badge=document.querySelector(".brief-badge"); if(badge) badge.remove();
+  var lbl=document.getElementById("brief-label"); if(lbl) lbl.textContent="Compiled from public local sources. Links go to the original source.";
+}).catch(function(){ return sampleBrief(); }).catch(function(){briefEl.textContent="Today's brief isn't available yet. Check back soon.";});
 var dirEl = document.getElementById("dir-body");
 if (dirEl) fetch(base()+"data/directory.json").then(function(r){return r.json();}).then(function(d){
   var cats=["Equipment rental","Dirt work / excavation","Fencing","Snow removal","Hauling","Ag services"];

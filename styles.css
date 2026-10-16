@@ -797,3 +797,36 @@ footer {
   html { scroll-behavior: auto; }
   .btn:hover { transform: none; }
 }
+
+/* Daily brief + directory (preview) */
+.brief{border:1px solid var(--line);background:var(--card);border-radius:var(--radius);padding:var(--pad);}
+.brief-badge{display:inline-block;background:var(--accent);color:var(--ink);font-weight:800;border-radius:999px;padding:.15rem .7rem;font-size:.85rem;}
+.brief-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:1rem;}
+.brief-sec h3{margin:.2rem 0;color:var(--accent2);font-family:var(--display);}
+.brief-sec ul{margin:0;padding-left:1.1rem;color:var(--muted);}
+.dir-list{list-style:none;padding:0;display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+.dir-list li{display:flex;flex-direction:column;gap:.2rem;}
+.dir-list span{color:var(--muted);}
+.tag{color:var(--muted);font-size:.78rem;border:1px solid var(--line);border-radius:6px;padding:.05rem .4rem;align-self:flex-start;}
+.featured{border:2px solid var(--accent);}
+.signup{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem;}
+.signup input{flex:1;min-width:200px;padding:.7rem;border-radius:10px;border:1px solid var(--line);background:var(--bg2);color:var(--text);}
+.promo-row{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:1rem;}
+.brief-real{display:block;color:var(--text);}
+.brief-real h2,.brief-real h3,.brief-real h4{font-family:var(--display);color:var(--accent2);margin:1rem 0 .3rem;}
+.brief-real ul{padding-left:1.1rem;color:var(--muted);margin:.2rem 0;}
+.brief-real a{color:var(--accent);overflow-wrap:anywhere;}
+.brief-real p{color:var(--muted);}
+.brief-real table{border-collapse:collapse;width:100%;}
+.brief-real td,.brief-real th{border:1px solid var(--line);padding:.3rem .5rem;}
+.brief-grid.brief-real{margin-top:.25rem;}
+.brief-real > section > header{margin-bottom:.6rem;padding-bottom:.5rem;border-bottom:1px solid var(--line);}
+.brief-real > section > header h2{margin-top:0;}
+.brief-real > section > header p{margin:0;}
+.brief-real section section{margin-bottom:1rem;}
+.brief-real footer{margin-top:.8rem;padding-top:.6rem;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;}
+.brief-real li{margin-bottom:.35rem;}
+.brief-real strong{color:var(--text);}
+.brief-real section{padding:0;}
+.brief-real header{position:static;backdrop-filter:none;background:none;box-shadow:none;z-index:auto;}
+.brief-real footer{padding-bottom:0;}

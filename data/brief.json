@@ -1,0 +1,13 @@
+{
+  "sample": true,
+  "label": "Sample brief — placeholder content, not real news",
+  "date": "YYYY-MM-DD",
+  "updated": "Sample — a daily routine will replace this file",
+  "sections": [
+    {"title": "Weather", "items": ["Sample: high/low, wind, and precip chance for Sheridan & Ranchester will go here."]},
+    {"title": "Roads / WYDOT", "items": ["Sample: I-90 and US-14 conditions and closures from WYDOT will go here."]},
+    {"title": "Local headlines", "items": ["Sample: headline one with a link to the source.", "Sample: headline two with a link to the source."]},
+    {"title": "Events", "items": ["Sample: today's community events in Sheridan County will go here."]},
+    {"title": "Ag & markets", "items": ["Sample: hay, cattle, and grain notes will go here."]}
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "featured": {"name": "AOE Rentals (Agent Orange Equipment)", "category": "Equipment rental", "town": "Ranchester", "phone": "(307) 316-7685", "text": "(307) 302-7252", "website": "https://aoerentalswyo.com/", "blurb": "2017 Kubota L-47 loader + backhoe. $200/day · $700/week with free local drop-off and pick-up."},
+  "listings": [
+    {"name": "Wyoming Cat Rental (Wyoming Rents)", "category": "Equipment rental", "town": "Sheridan", "phone": "(307) 673-0026", "website": "https://www.wyomingcat.com/company-locations/sheridan/"},
+    {"name": "M&K Rentals", "category": "Equipment rental", "town": "Sheridan", "phone": "(307) 672-7512", "website": "https://www.mandkrentals.com/"},
+    {"name": "Cutting Edge Excavating", "category": "Dirt work / excavation", "town": "Sheridan", "phone": "(307) 763-6735", "website": "https://cuttingedgeexcavatingllc.com/"},
+    {"name": "Nelson Excavating, LLC", "category": "Dirt work / excavation", "town": "Sheridan", "phone": "(307) 751-2262", "website": "https://nelsonexcavatingllc.com/"},
+    {"name": "High Country Contracting", "category": "Dirt work / excavation", "town": "Sheridan", "phone": "(307) 620-1970", "website": "https://highcountrycontractingllc.com/"},
+    {"name": "Wagner Ranch Services", "category": "Dirt work / excavation", "town": "Sheridan", "phone": "(307) 752-2787", "website": "https://www.wagnerranchservices.com/"},
+    {"name": "Town and Country Fencing", "category": "Fencing", "town": "Sheridan", "phone": "(307) 349-2701", "website": "https://www.townandcountryfencingwy.com/"},
+    {"name": "Bockman Group Fence", "category": "Fencing", "town": "Ranchester", "phone": "(307) 461-2982", "website": "https://www.bockmangroup.com/"},
+    {"name": "Shield Fencing, LLC", "category": "Fencing", "town": "Sheridan", "phone": "(307) 360-3153", "website": "http://www.clarkranchhorses.com/shieldfencing"},
+    {"name": "SSR Construction", "category": "Snow removal", "town": "Sheridan", "phone": "", "website": "https://www.ssrconstructioninc.com/"},
+    {"name": "Sheridan Lawn and Landscaping", "category": "Snow removal", "town": "Sheridan", "phone": "", "website": "https://www.sheridanlawnandlandscaping.com/"},
+    {"name": "Quality Hedge & Tree, Inc.", "category": "Snow removal", "town": "Sheridan", "phone": "(307) 672-2842", "website": "https://www.qualityhedge.com/"},
+    {"name": "Custom Sprinkler and Landscaping", "category": "Snow removal", "town": "Sheridan", "phone": "(307) 674-7155", "website": "https://customsprinklerandlandscaping.com/"},
+    {"name": "Mullinax Gravel", "category": "Hauling", "town": "Sheridan", "phone": "(307) 674-4466", "website": "https://www.mullinax-inc.com/"},
+    {"name": "Farmers Co-op", "category": "Ag services", "town": "Sheridan", "phone": "(307) 672-2473", "website": "https://sheridancoop.com/"},
+    {"name": "Sheridan Seed", "category": "Ag services", "town": "Sheridan", "phone": "(307) 672-2475", "website": "https://sheridanseed.com/"}
+  ]
+}

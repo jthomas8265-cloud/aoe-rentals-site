@@ -104,6 +104,12 @@
         <p class="eyebrow">Updated daily</p>
         <h2 class="section-title">Sheridan County Daily Brief</h2>
         <div class="brief">
+          <div class="brief-player" id="brief-player">
+            <button type="button" class="btn btn-ghost sound-toggle" id="sound-toggle" aria-pressed="false">🔇 Sound off</button>
+            <span class="now-playing" id="now-playing" aria-live="polite"></span>
+            <button type="button" class="btn btn-ghost player-btn" id="player-pause" hidden aria-label="Pause">Pause</button>
+            <button type="button" class="btn btn-ghost player-btn" id="player-next" hidden aria-label="Next track">Next ⏭</button>
+          </div>
           <span class="brief-badge">Sample brief</span>
           <p class="note" id="brief-label">Sample brief: placeholder content, not real news</p>
           <div class="brief-grid" id="brief-body"></div>

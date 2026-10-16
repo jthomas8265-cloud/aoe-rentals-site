@@ -830,3 +830,12 @@ footer {
 .brief-real section{padding:0;}
 .brief-real header{position:static;backdrop-filter:none;background:none;box-shadow:none;z-index:auto;}
 .brief-real footer{padding-bottom:0;}
+/* Brief music player */
+.brief-player{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.6rem;}
+.brief-player .btn{padding:.4rem .8rem;font-size:.9rem;}
+.sound-toggle[aria-pressed="true"]{border-color:var(--accent);color:var(--accent2);}
+.now-playing{color:var(--muted);font-size:.9rem;flex:1;min-width:8rem;}
+/* Background photo hook: add assets/img/brief-bg.jpg. If it's missing, only the dark overlay shows. */
+.brief{position:relative;isolation:isolate;overflow:hidden;
+  background-image:linear-gradient(rgba(8,13,8,.86),rgba(8,13,8,.92)),url("assets/img/brief-bg.jpg");
+  background-size:cover;background-position:center;background-color:var(--card);}

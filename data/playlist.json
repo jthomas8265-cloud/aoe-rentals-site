@@ -1,0 +1,36 @@
+{
+ "tracks": [
+  {
+   "title": "Big Sky Morning",
+   "src": "assets/audio/big-sky-morning.mp3"
+  },
+  {
+   "title": "Empty Chair",
+   "src": "assets/audio/empty-chair.mp3"
+  },
+  {
+   "title": "For Sale on the County Line",
+   "src": "assets/audio/for-sale-on-the-county-line.mp3"
+  },
+  {
+   "title": "Hey Season",
+   "src": "assets/audio/hey-season.mp3"
+  },
+  {
+   "title": "Last Call in Sheridan",
+   "src": "assets/audio/last-call-in-sheridan.mp3"
+  },
+  {
+   "title": "Powder River Wind",
+   "src": "assets/audio/powder-river-wind.mp3"
+  },
+  {
+   "title": "Saturday in Town",
+   "src": "assets/audio/saturday-in-town.mp3"
+  },
+  {
+   "title": "Tracers In My Mind",
+   "src": "assets/audio/tracers-in-my-mind.mp3"
+  }
+ ]
+}

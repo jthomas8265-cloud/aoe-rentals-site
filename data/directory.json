@@ -12,6 +12,15 @@
  },
  "listings": [
   {
+   "name": "Mullinax (Sand & Gravel, Custom Crushing)",
+   "town": "Sheridan",
+   "phone": "(307) 674-4466",
+   "website": "https://www.mullinax-inc.com/",
+   "categories": [
+    "Materials"
+   ]
+  },
+  {
    "name": "Wyoming Cat Rental (Wyoming Rents)",
    "town": "Sheridan",
    "phone": "(307) 673-0026",
@@ -67,7 +76,7 @@
     "Dirt work / excavation",
     "Snow removal",
     "Hauling",
-    "Gravel & aggregate"
+    "Materials"
    ]
   },
   {
@@ -134,15 +143,6 @@
    "website": "https://customsprinklerandlandscaping.com/",
    "categories": [
     "Snow removal"
-   ]
-  },
-  {
-   "name": "Mullinax (Sand & Gravel, Custom Crushing)",
-   "town": "Sheridan",
-   "phone": "(307) 674-4466",
-   "website": "https://www.mullinax-inc.com/",
-   "categories": [
-    "Gravel & aggregate"
    ]
   },
   {

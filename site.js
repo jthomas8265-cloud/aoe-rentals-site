@@ -25,3 +25,22 @@ if (dirEl) fetch(base()+"data/directory.json").then(function(r){return r.json();
   dirEl.innerHTML=cats.map(function(c){var ls=d.listings.filter(function(l){return l.category===c;});
     return '<section class="dir-cat"><h2>'+esc(c)+'</h2>'+(ls.length?'<ul class="dir-list">'+ls.map(function(l){return '<li class="card"><strong>'+esc(l.name)+'</strong><span>'+esc(l.town)+', WY</span>'+(l.phone?'<span>'+tel(l.phone)+'</span>':'')+'<a href="'+esc(l.website)+'" rel="nofollow noopener" target="_blank">Website</a><small class="tag">Unverified · not affiliated</small></li>';}).join("")+'</ul>':'<p class="note">No listings yet.</p>')+'</section>';}).join("");
 });
+(function(){
+  var tog=document.getElementById("sound-toggle"); if(!tog) return;
+  var np=document.getElementById("now-playing"), pb=document.getElementById("player-pause"), nb=document.getElementById("player-next");
+  var audio=new Audio(); audio.preload="none"; var list=[], i=0, on=false;
+  function shuffle(a){for(var j=a.length-1;j>0;j--){var k=Math.floor(Math.random()*(j+1));var t=a[j];a[j]=a[k];a[k]=t;}return a;}
+  function play(){var t=list[i]; audio.src=base()+t.src; np.textContent="♪ "+t.title; audio.play().catch(function(){}); pb.textContent="Pause";}
+  function next(){i=(i+1)%list.length; if(i===0) shuffle(list); play();}
+  audio.addEventListener("ended",next);
+  audio.addEventListener("error",function(){ if(on) next(); });
+  function load(){return list.length?Promise.resolve():fetch(base()+"data/playlist.json").then(function(r){return r.json();}).then(function(d){list=shuffle(d.tracks.slice());});}
+  tog.addEventListener("click",function(){
+    on=!on; tog.setAttribute("aria-pressed",on); tog.textContent=on?"🔊 Sound on":"🔇 Sound off";
+    pb.hidden=nb.hidden=!on;
+    if(on){load().then(play).catch(function(){np.textContent="Music unavailable";});}
+    else{audio.pause(); np.textContent="";}
+  });
+  pb.addEventListener("click",function(){ if(audio.paused){audio.play().catch(function(){});pb.textContent="Pause";} else {audio.pause();pb.textContent="Play";} });
+  nb.addEventListener("click",next);
+})();

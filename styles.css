@@ -836,10 +836,8 @@ footer {
 .sound-toggle[aria-pressed="true"]{border-color:var(--accent);color:var(--accent2);}
 .now-playing{color:var(--muted);font-size:.9rem;flex:1;min-width:8rem;}
 /* Background photo hook: add assets/img/brief-bg.jpg. If it's missing, only the dark overlay shows. */
-.brief{position:relative;isolation:isolate;overflow:hidden;background-color:var(--card);padding-top:calc(260px + var(--pad));}
-/* Full-color photo banner across the top of the card. If the file is missing, it's just empty dark space. */
-.brief::before{content:"";position:absolute;left:0;right:0;top:0;height:280px;z-index:-2;background:url("assets/img/brief-bg.jpg") center 40%/cover no-repeat;}
-.brief::after{content:"";position:absolute;left:0;right:0;top:0;height:280px;z-index:-1;background:linear-gradient(to bottom,rgba(8,13,8,0) 55%,rgba(14,22,14,.85) 92%,var(--card) 100%);}
-.brief .brief-player{margin-top:-3.6rem;margin-bottom:1rem;background:rgba(8,13,8,.78);border:1px solid var(--line);border-radius:12px;padding:.45rem .6rem;backdrop-filter:blur(6px);}
+.brief{position:relative;background-color:var(--card);}
+.brief-photo{display:block;width:100%;max-width:828px;height:auto;margin:0 auto 1rem;border-radius:12px;}
+.brief .brief-player{margin-top:0;margin-bottom:1rem;background:rgba(8,13,8,.78);border:1px solid var(--line);border-radius:12px;padding:.45rem .6rem;backdrop-filter:blur(6px);}
 .brief-real{background:rgba(8,13,8,.55);border-radius:12px;padding:.2rem .9rem .8rem;}
 [hidden]{display:none !important;}

@@ -836,6 +836,6 @@ footer {
 .sound-toggle[aria-pressed="true"]{border-color:var(--accent);color:var(--accent2);}
 .now-playing{color:var(--muted);font-size:.9rem;flex:1;min-width:8rem;}
 /* Background photo hook: add assets/img/brief-bg.jpg. If it's missing, only the dark overlay shows. */
-.brief{position:relative;isolation:isolate;overflow:hidden;
-  background-image:linear-gradient(rgba(8,13,8,.86),rgba(8,13,8,.92)),url("assets/img/brief-bg.jpg");
-  background-size:cover;background-position:center;background-color:var(--card);}
+.brief{position:relative;isolation:isolate;overflow:hidden;background-color:var(--card);}
+.brief::before{content:"";position:absolute;inset:-12px;z-index:-2;background:url("assets/img/brief-bg.jpg") center/cover no-repeat;filter:blur(4px);}
+.brief::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(rgba(8,13,8,.82),rgba(8,13,8,.9));}

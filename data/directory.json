@@ -345,6 +345,26 @@
     "Trades & supplies"
    ],
    "note": "904 4th Ave E. Plumbing and mechanical."
+  },
+  {
+   "name": "Norco (Sheridan branch)",
+   "town": "Sheridan",
+   "phone": "(307) 672-9754",
+   "website": "https://www.norcoindustrial.com/sheridan",
+   "categories": [
+    "Welding gas & supplies"
+   ],
+   "note": "2639 Coffeen Ave. Argon, oxygen, CO2, acetylene, nitrogen; welding and safety supplies."
+  },
+  {
+   "name": "American Welding & Gas (AWG)",
+   "town": "Sheridan",
+   "phone": "(307) 672-3567",
+   "website": "https://www.awggases.com/",
+   "categories": [
+    "Welding gas & supplies"
+   ],
+   "note": "257 E Brundage St. Industrial gases (argon, oxygen, acetylene), welding equipment and consumables."
   }
  ]
 }

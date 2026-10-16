@@ -853,3 +853,18 @@ footer {
 .sound-fab:hover{background:#142014;}
 
 .btn-xl{font-size:1.15rem;padding:16px 28px;box-shadow:0 0 0 3px rgba(255,120,30,.25);}
+
+.promo{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:0;border:2px solid #ff7a1a;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#1a0f05,#0b0d0b 60%);box-shadow:0 0 40px rgba(255,122,26,.25);}
+.promo-media{position:relative;display:block;min-height:300px;}
+.promo-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+.promo-body{padding:32px;}
+.promo-h{font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.05;margin:.2em 0;color:#ff7a1a;}
+.promo-sub{font-size:1.15rem;margin:0 0 20px;}
+.promo-row{margin-top:14px;}
+.promo-fine{font-size:.8rem;opacity:.65;margin-top:16px;}
+.promo-note{color:#ff7a1a;font-weight:700;margin:12px 0 4px;}
+@media(max-width:760px){.promo{grid-template-columns:1fr}.promo-media{min-height:240px}}
+
+.promo-page .promo-media{min-height:520px;}
+.promo-list{margin:0 0 22px;padding-left:1.2em;font-size:1.08rem;line-height:1.7;}
+.promo-list li::marker{color:#ff7a1a;}

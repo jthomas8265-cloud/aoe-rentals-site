@@ -379,16 +379,6 @@
    "note": "2018 Coffeen Ave. Independently owned NAPA store (SPB Inc.)."
   },
   {
-   "name": "Lightning Automotive",
-   "town": "Sheridan",
-   "phone": "(307) 673-2872",
-   "website": "https://lightningautomotivewy.com/",
-   "categories": [
-    "Mechanic shops"
-   ],
-   "note": "1149 Coffeen Ave. Diagnostics and repair for all makes, local since 2020."
-  },
-  {
    "name": "CW Auto Service",
    "town": "Sheridan",
    "phone": "(307) 461-2375",
@@ -397,6 +387,16 @@
     "Mechanic shops"
    ],
    "note": "2175 Skyline Dr. Diagnostics, engine, suspension and foreign repair."
+  },
+  {
+   "name": "Lightning Automotive",
+   "town": "Sheridan",
+   "phone": "(307) 673-2872",
+   "website": "https://lightningautomotivewy.com/",
+   "categories": [
+    "Mechanic shops"
+   ],
+   "note": "1149 Coffeen Ave. Diagnostics and repair for all makes, local since 2020."
   },
   {
    "name": "L&H Industrial (Sheridan shop)",

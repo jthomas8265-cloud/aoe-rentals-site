@@ -868,3 +868,13 @@ footer {
 .promo-page .promo-media{min-height:520px;}
 .promo-list{margin:0 0 22px;padding-left:1.2em;font-size:1.08rem;line-height:1.7;}
 .promo-list li::marker{color:#ff7a1a;}
+
+/* Call 811 before you dig */
+.dig-safe{padding:2rem 0;}
+.dig-card{border:2px solid var(--accent);border-left-width:6px;background:linear-gradient(135deg,#1a0f05,var(--card) 65%);}
+.dig-card .section-title{margin-top:.2rem;}
+.dig-card p a,.dig-card li a{color:var(--accent);}
+.dig-card .check{margin:.9rem 0 0;}
+.dig-card .cta-row{margin-top:1rem;}
+.dig-reminder{margin:.8rem 0 0;padding:.55rem .9rem;border-left:4px solid var(--accent);background:rgba(255,106,0,.08);border-radius:8px;font-size:.95rem;color:var(--muted);}
+.dig-reminder a{color:var(--accent);font-weight:600;}

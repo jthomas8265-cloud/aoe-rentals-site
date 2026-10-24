@@ -878,3 +878,14 @@ footer {
 .dig-card .cta-row{margin-top:1rem;}
 .dig-reminder{margin:.8rem 0 0;padding:.55rem .9rem;border-left:4px solid var(--accent);background:rgba(255,106,0,.08);border-radius:8px;font-size:.95rem;color:var(--muted);}
 .dig-reminder a{color:var(--accent);font-weight:600;}
+
+/* Advertise page (hidden, /advertise/) */
+.ad-packages{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin:1.4rem 0;}
+.ad-pkg h2{font-family:var(--display);margin:.2rem 0 .4rem;}
+.ad-pkg ul{color:var(--muted);padding-left:1.1rem;margin:.6rem 0 1rem;}
+.ad-pkg-price{font-size:1.05rem;color:var(--muted);margin:0;} .ad-pkg-price b{color:var(--accent);font-size:1.6rem;}
+.ad-sample{display:flex;flex-direction:column;gap:.2rem;padding:.8rem 1rem;}
+.ad-sample span{color:var(--muted);}
+.ad-sponsor-line{border-left:4px solid var(--accent);background:rgba(255,106,0,.08);border-radius:8px;font-size:.95rem;color:var(--muted);display:block;}
+.ad-book h2{font-family:var(--display);margin:.2rem 0 .4rem;}
+.ad-book p{color:var(--muted);}

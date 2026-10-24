@@ -71,6 +71,8 @@ if(window.AOEPlayer) window.AOEPlayer.bindBrief();
       document.body.innerHTML=doc.body.innerHTML;
       var hsh=new URL(url,location.href).hash; if(hsh&&document.querySelector(hsh)) document.querySelector(hsh).scrollIntoView(); else if(push) window.scrollTo(0,0);
       mountBtn(); AOEInit();
+      /* Count in-place page views (first load is counted by count.js itself) */
+      if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({path: location.pathname + location.search, title: document.title});
     }).catch(function(){ location.href=url; });
   }
   document.addEventListener("click",function(e){

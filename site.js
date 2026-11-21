@@ -29,7 +29,8 @@ if (dirEl) fetch(base()+"data/directory.json").then(function(r){return r.json();
 var ysYard = document.getElementById("yard-sales-body");
 var ysGarden = document.getElementById("garden-body");
 var ysFarm = document.getElementById("farm-body");
-if (ysYard || ysGarden || ysFarm) {
+var ysFood = document.getElementById("food-body");
+if (ysYard || ysGarden || ysFarm || ysFood) {
   function ysToday(){ return new Date().toLocaleDateString("en-CA", {timeZone:"America/Denver"}); }
   function ysDay(iso){
     if(!iso) return "";
@@ -45,9 +46,33 @@ if (ysYard || ysGarden || ysFarm) {
     d.setUTCDate(d.getUTCDate()+days);
     return d.toISOString().slice(0,10);
   }
+  function ysCategory(s){
+    var c=String(s.category||"yard-sale").toLowerCase().replace(/_/g,"-");
+    if(c==="garden"||c==="eggs"||c==="garden-eggs") return "garden";
+    if(c==="farm"||c==="hay"||c==="hay-farm") return "farm";
+    if(c==="food-truck"||c==="foodtruck"||c==="truck") return "food-truck";
+    if(c==="coffee"||c==="coffee-shop"||c==="coffee-hut") return "coffee";
+    if(c==="restaurant"||c==="restaurants") return "restaurant";
+    return "yard-sale";
+  }
+  function ysPaid(s){
+    var cat=ysCategory(s);
+    return !!(s.paid || s.featured || cat==="restaurant");
+  }
   function ysUntil(s){
     if(s.end) return String(s.end);
     if(s.expires) return String(s.expires);
+    var cat=ysCategory(s), paid=ysPaid(s);
+    if(cat==="coffee" && !paid){
+      if(s.added) return ysAddDays(s.added, 7);
+      return s.start?String(s.start):"";
+    }
+    if(cat==="food-truck" && !paid){
+      return s.start?String(s.start):(s.added?String(s.added):"");
+    }
+    if(paid || cat==="restaurant"){
+      return s.start?String(s.start):"";
+    }
     if(s.start) return String(s.start);
     if(s.added) return ysAddDays(s.added, 30);
     return "";
@@ -59,28 +84,27 @@ if (ysYard || ysGarden || ysFarm) {
     var until=ysUntil(s);
     return until?("Through "+ysDay(until)):"";
   }
-  function ysCategory(s){
-    var c=String(s.category||"yard-sale").toLowerCase().replace(/_/g,"-");
-    if(c==="garden"||c==="eggs"||c==="garden-eggs") return "garden";
-    if(c==="farm"||c==="hay"||c==="hay-farm") return "farm";
-    return "yard-sale";
-  }
   var emptyMsg={
     "yard-sale":"No yard sales listed right now. If you are having one, send us the details and we will put it up for free.",
     "garden":"No garden, egg, or honey listings right now. If you have extras to share, send us the details and we will put it up for free.",
-    "farm":"No hay or farm listings right now. If you have hay, straw, or feed to sell, send us the details and we will put it up for free."
+    "farm":"No hay or farm listings right now. If you have hay, straw, or feed to sell, send us the details and we will put it up for free.",
+    "food":"No food trucks, coffee specials, or restaurant listings right now. Food trucks can post today's spot for free, and coffee shops can post a special for free."
   };
-  var defaultTitle={"yard-sale":"Yard sale","garden":"Garden goods","farm":"Hay and farm goods"};
+  var defaultTitle={"yard-sale":"Yard sale","garden":"Garden goods","farm":"Hay and farm goods","food-truck":"Food truck","coffee":"Coffee special","restaurant":"Restaurant"};
   function ysCard(s){
     var when=ysRange(s);
     var times=s.times?esc(s.times):"";
     var kicker=when+(times?(when?" · ":"")+times:"");
+    var paid=ysPaid(s);
+    var featured=!!s.featured;
+    var tag=paid?' <span class="board-sponsored">Sponsored</span>':'';
     var price=s.price?('<p class="yard-sale-price">'+esc(s.price)+'</p>'):'';
     var loc=s.location?('<p class="yard-sale-loc">'+esc(s.location)+'</p>'):'';
     var desc=s.description?('<p class="yard-sale-desc">'+esc(s.description)+'</p>'):'';
     var contact=s.contact?('<p class="yard-sale-contact">'+esc(s.contact)+'</p>'):'';
     var cat=ysCategory(s);
-    return '<li class="card yard-sale-card"><p class="card-kicker">'+(kicker?kicker:"Listed free")+'</p><h3>'+esc(s.title||defaultTitle[cat])+'</h3>'+price+loc+desc+contact+'</li>';
+    var cls="card yard-sale-card"+(featured?" featured":"");
+    return '<li class="'+cls+'"><p class="card-kicker">'+(kicker?kicker:"Listed free")+tag+'</p><h3>'+esc(s.title||defaultTitle[cat])+'</h3>'+price+loc+desc+contact+'</li>';
   }
   function ysRender(el, items, cat){
     if(!el) return;
@@ -91,8 +115,14 @@ if (ysYard || ysGarden || ysFarm) {
     el.innerHTML='<ul class="yard-sale-list">'+items.map(ysCard).join("")+'</ul>';
   }
   function ysSort(a,b,cat){
-    if(cat==="yard-sale"){
-      var as=a.start||"", bs=b.start||"";
+    if(cat==="food"){
+      var fa=!!a.featured, fb=!!b.featured;
+      if(fa!==fb) return fa?-1:1;
+      var pa=ysPaid(a), pb=ysPaid(b);
+      if(pa!==pb) return pa?-1:1;
+    }
+    if(cat==="yard-sale" || cat==="food"){
+      var as=a.start||a.added||"", bs=b.start||b.added||"";
       if(as!==bs) return as<bs?-1:1;
     } else {
       var aa=a.added||"", ba=b.added||"";
@@ -110,14 +140,17 @@ if (ysYard || ysGarden || ysFarm) {
       var until = ysUntil(s);
       return until && String(until) >= today;
     });
-    ["yard-sale","garden","farm"].forEach(function(cat){
-      var items=all.filter(function(s){return ysCategory(s)===cat;}).sort(function(a,b){return ysSort(a,b,cat);});
-      var el=cat==="garden"?ysGarden:cat==="farm"?ysFarm:ysYard;
-      ysRender(el, items, cat);
-    });
+    function itemsFor(cats){
+      var set=cats;
+      return all.filter(function(s){return set.indexOf(ysCategory(s))>-1;});
+    }
+    ysRender(ysGarden, itemsFor(["garden"]).sort(function(a,b){return ysSort(a,b,"garden");}), "garden");
+    ysRender(ysFood, itemsFor(["food-truck","coffee","restaurant"]).sort(function(a,b){return ysSort(a,b,"food");}), "food");
+    ysRender(ysYard, itemsFor(["yard-sale"]).sort(function(a,b){return ysSort(a,b,"yard-sale");}), "yard-sale");
+    ysRender(ysFarm, itemsFor(["farm"]).sort(function(a,b){return ysSort(a,b,"farm");}), "farm");
   }).catch(function(){
     var fail='<p class="note">The community board isn\'t loading right now. Check back soon, or send us your details and we will post them.</p>';
-    [ysYard,ysGarden,ysFarm].forEach(function(el){ if(el) el.innerHTML=fail; });
+    [ysYard,ysGarden,ysFarm,ysFood].forEach(function(el){ if(el) el.innerHTML=fail; });
   });
 }
 

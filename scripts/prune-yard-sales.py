@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Remove expired community-board listings (yard sales, garden, farm).
+"""Remove expired community-board listings.
 
 A listing stays up through its last day (inclusive) in America/Denver.
-Last day is, in order: `end`, then `expires`, then `start` (legacy
-yard sales), then 30 days after `added`. The public page uses the same
-rule, so this is the repo cleanup step.
+Last day is `end`, then `expires`, then a category fallback (see
+effective_end). The public page uses the same rule, so this is the
+repo cleanup step.
 
 Usage (from the site repo root):
   python3 scripts/prune-yard-sales.py
@@ -40,21 +40,56 @@ def add_days(iso: str, days: int) -> str:
     return (date.fromisoformat(iso) + timedelta(days=days)).isoformat()
 
 
+def category_of(entry) -> str:
+    c = str((entry or {}).get("category") or "yard-sale").lower().replace("_", "-")
+    if c in ("garden", "eggs", "garden-eggs"):
+        return "garden"
+    if c in ("farm", "hay", "hay-farm"):
+        return "farm"
+    if c in ("food-truck", "foodtruck", "truck"):
+        return "food-truck"
+    if c in ("coffee", "coffee-shop", "coffee-hut"):
+        return "coffee"
+    if c in ("restaurant", "restaurants"):
+        return "restaurant"
+    return "yard-sale"
+
+
+def is_paid(entry) -> bool:
+    if not isinstance(entry, dict):
+        return False
+    return bool(entry.get("paid") or entry.get("featured") or category_of(entry) == "restaurant")
+
+
 def effective_end(entry) -> str | None:
     """Last visible day, inclusive. Matches the client filter in site.js."""
     if not isinstance(entry, dict):
         return None
-    for key in ("end", "expires", "start"):
-        value = entry.get(key)
-        if value:
-            return str(value)
+    if entry.get("end"):
+        return str(entry["end"])
+    if entry.get("expires"):
+        return str(entry["expires"])
+    cat = category_of(entry)
+    paid = is_paid(entry)
+    start = entry.get("start")
     added = entry.get("added")
-    if not added:
-        return None
     try:
-        return add_days(str(added), 30)
+        if cat == "coffee" and not paid:
+            if added:
+                return add_days(str(added), 7)
+            return str(start) if start else None
+        if cat == "food-truck" and not paid:
+            value = start or added
+            return str(value) if value else None
+        if paid or cat == "restaurant":
+            return str(start) if start else None
+        if start:
+            return str(start)
+        if added:
+            return add_days(str(added), 30)
     except ValueError:
         return None
+    return None
 
 
 def is_active(entry, today: str) -> bool:

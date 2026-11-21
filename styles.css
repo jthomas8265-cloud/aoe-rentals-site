@@ -915,3 +915,5 @@ footer {
 .board-section h3{font-size:1.35rem;}
 .board-lead{margin:0 0 .7rem;color:var(--muted);}
 .community-board .board-section{margin-bottom:1.2rem;}
+
+.board-sponsored{display:inline-block;margin-left:.45rem;padding:.08rem .45rem;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;vertical-align:middle;}

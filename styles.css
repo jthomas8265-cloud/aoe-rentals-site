@@ -917,3 +917,17 @@ footer {
 .community-board .board-section{margin-bottom:1.2rem;}
 
 .board-sponsored{display:inline-block;margin-left:.45rem;padding:.08rem .45rem;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;vertical-align:middle;}
+
+.board-bookmark{margin:0 0 1.15rem;color:var(--text);font-weight:600;}
+.board-bookmark-hint{display:block;margin-top:.25rem;color:var(--muted);font-weight:500;font-size:.9rem;}
+.board-pricing{margin:0 0 1.5rem;}
+.board-pricing h2,.board-pricing h3{font-family:var(--display);letter-spacing:.03em;margin:0 0 .55rem;color:var(--accent2);font-size:1.35rem;}
+.board-pricing-list{list-style:none;padding:0;margin:0;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);overflow:hidden;}
+.board-pricing-list li{display:flex;justify-content:space-between;align-items:baseline;gap:.9rem 1.2rem;padding:.7rem 1.05rem;border-top:1px solid var(--line);color:var(--muted);}
+.board-pricing-list li:first-child{border-top:0;}
+.board-pricing-list span{min-width:0;}
+.board-pricing-list strong{color:var(--text);font-weight:700;text-align:right;flex:0 1 auto;}
+@media (max-width:560px){
+  .board-pricing-list li{flex-direction:column;gap:.15rem;align-items:flex-start;}
+  .board-pricing-list strong{text-align:left;}
+}

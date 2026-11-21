@@ -889,3 +889,18 @@ footer {
 .ad-sponsor-line{border-left:4px solid var(--accent);background:rgba(255,106,0,.08);border-radius:8px;font-size:.95rem;color:var(--muted);display:block;}
 .ad-book h2{font-family:var(--display);margin:.2rem 0 .4rem;}
 .ad-book p{color:var(--muted);}
+
+
+/* Free Yard Sale Board */
+.yard-sale-list{list-style:none;padding:0;margin:0 0 1.2rem;display:grid;gap:.8rem;}
+.yard-sale-card h3{margin:0 0 .35rem;}
+.yard-sale-card .card-kicker{margin-bottom:.35rem;}
+.yard-sale-loc,.yard-sale-desc{margin:.2rem 0 0;color:var(--muted);}
+.yard-sale-loc{color:var(--text);font-weight:600;}
+.yard-sales-empty{margin:0 0 1rem;padding:.9rem 1.05rem;border:1px dashed var(--line);border-radius:var(--radius);background:rgba(8,13,8,.55);}
+.yard-sales-actions{margin-top:1.05rem;flex-wrap:wrap;}
+.yard-sales-howto{margin-top:1.4rem;border-top:3px solid var(--accent);}
+.yard-sales-howto h2{font-family:var(--display);margin:.2rem 0 .45rem;font-size:1.6rem;letter-spacing:.03em;}
+.yard-sales-howto p{color:var(--muted);}
+.yard-sales-howto .check{margin:.7rem 0 0;}
+.yard-sales-howto .check a{font-weight:600;}

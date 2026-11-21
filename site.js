@@ -85,10 +85,10 @@ if (ysYard || ysGarden || ysFarm || ysFood) {
     return until?("Through "+ysDay(until)):"";
   }
   var emptyMsg={
-    "yard-sale":"No yard sales listed right now. If you are having one, send us the details and we will put it up for free.",
-    "garden":"No garden, egg, or honey listings right now. If you have extras to share, send us the details and we will put it up for free.",
-    "farm":"No hay or farm listings right now. If you have hay, straw, or feed to sell, send us the details and we will put it up for free.",
-    "food":"No food trucks, coffee specials, or restaurant listings right now. Food trucks can post today's spot for free, and coffee shops can post a special for free."
+    "yard-sale":"No yard sales listed right now. If you are having one, send us the details and we will put it up.",
+    "garden":"No garden, egg, or honey listings right now. If you have extras to share, send us the details and we will put it up.",
+    "farm":"No hay or farm listings right now. If you have hay, straw, or feed to sell, send us the details and we will put it up.",
+    "food":"No food trucks, coffee specials, or restaurant listings right now. Food trucks can post today's spot, and coffee shops can post a special."
   };
   var defaultTitle={"yard-sale":"Yard sale","garden":"Garden goods","farm":"Hay and farm goods","food-truck":"Food truck","coffee":"Coffee special","restaurant":"Restaurant"};
   function ysCard(s){
@@ -104,7 +104,7 @@ if (ysYard || ysGarden || ysFarm || ysFood) {
     var contact=s.contact?('<p class="yard-sale-contact">'+esc(s.contact)+'</p>'):'';
     var cat=ysCategory(s);
     var cls="card yard-sale-card"+(featured?" featured":"");
-    return '<li class="'+cls+'"><p class="card-kicker">'+(kicker?kicker:"Listed free")+tag+'</p><h3>'+esc(s.title||defaultTitle[cat])+'</h3>'+price+loc+desc+contact+'</li>';
+    return '<li class="'+cls+'"><p class="card-kicker">'+(kicker?kicker:"Listed")+tag+'</p><h3>'+esc(s.title||defaultTitle[cat])+'</h3>'+price+loc+desc+contact+'</li>';
   }
   function ysRender(el, items, cat){
     if(!el) return;

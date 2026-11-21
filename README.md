@@ -12,5 +12,5 @@ python3 -m http.server 8080
 ## Deploy
 GitHub Pages (or Cloudflare Pages). Point `aoerentalswyo.com` A/CNAME at the host after DNS is live at Porkbun.
 
-## Yard sale board
-Free community listings are in `data/yard-sales.json`, shown at `/yard-sales/`. Intake and commit steps: `/workspace/yard-sales/README.md`. Daily cleanup: `python3 scripts/prune-yard-sales.py`.
+## Community board
+Free yard sale, garden, and farm listings are in `data/yard-sales.json`, shown at `/yard-sales/`. Intake and commit steps: `/workspace/yard-sales/README.md`. Daily cleanup: `python3 scripts/prune-yard-sales.py`.

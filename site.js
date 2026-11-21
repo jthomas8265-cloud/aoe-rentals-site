@@ -26,8 +26,10 @@ if (dirEl) fetch(base()+"data/directory.json").then(function(r){return r.json();
   dirEl.innerHTML=cats.map(function(c){var ls=d.listings.filter(function(l){return (l.categories||[l.category]).indexOf(c)>-1;});
     return '<section class="dir-cat"><h2>'+esc(c)+'</h2>'+(ls.length?'<ul class="dir-list">'+ls.map(function(l){return '<li class="card"><strong>'+esc(l.name)+'</strong><span>'+esc(l.town)+', WY</span>'+(l.phone?'<span>'+tel(l.phone)+'</span>':'')+(l.note?'<span>'+esc(l.note)+'</span>':'')+'<a href="'+esc(l.website)+'" rel="nofollow noopener" target="_blank">'+(l.note&&/U-Haul/.test(l.name)?'Rates &amp; reservations':'Website')+'</a><small class="tag">Unverified · not affiliated</small></li>';}).join("")+'</ul>':'<p class="note">No listings yet.</p>')+'</section>';}).join("");
 });
-var ysEl = document.getElementById("yard-sales-body");
-if (ysEl) {
+var ysYard = document.getElementById("yard-sales-body");
+var ysGarden = document.getElementById("garden-body");
+var ysFarm = document.getElementById("farm-body");
+if (ysYard || ysGarden || ysFarm) {
   function ysToday(){ return new Date().toLocaleDateString("en-CA", {timeZone:"America/Denver"}); }
   function ysDay(iso){
     if(!iso) return "";
@@ -36,38 +38,89 @@ if (ysEl) {
     var d = new Date(Date.UTC(Number(p[0]), Number(p[1])-1, Number(p[2]), 12));
     return d.toLocaleDateString("en-US", {weekday:"short", month:"short", day:"numeric", timeZone:"UTC"});
   }
-  function ysRange(start,end){
+  function ysAddDays(iso, days){
+    var p = String(iso).split("-");
+    if(p.length!==3) return "";
+    var d = new Date(Date.UTC(Number(p[0]), Number(p[1])-1, Number(p[2]), 12));
+    d.setUTCDate(d.getUTCDate()+days);
+    return d.toISOString().slice(0,10);
+  }
+  function ysUntil(s){
+    if(s.end) return String(s.end);
+    if(s.expires) return String(s.expires);
+    if(s.start) return String(s.start);
+    if(s.added) return ysAddDays(s.added, 30);
+    return "";
+  }
+  function ysRange(s){
+    var start=s.start, end=s.end;
     if(start && end && start!==end) return ysDay(start)+" – "+ysDay(end);
-    return ysDay(start||end);
+    if(start) return ysDay(start);
+    var until=ysUntil(s);
+    return until?("Through "+ysDay(until)):"";
+  }
+  function ysCategory(s){
+    var c=String(s.category||"yard-sale").toLowerCase().replace(/_/g,"-");
+    if(c==="garden"||c==="eggs"||c==="garden-eggs") return "garden";
+    if(c==="farm"||c==="hay"||c==="hay-farm") return "farm";
+    return "yard-sale";
+  }
+  var emptyMsg={
+    "yard-sale":"No yard sales listed right now. If you are having one, send us the details and we will put it up for free.",
+    "garden":"No garden, egg, or honey listings right now. If you have extras to share, send us the details and we will put it up for free.",
+    "farm":"No hay or farm listings right now. If you have hay, straw, or feed to sell, send us the details and we will put it up for free."
+  };
+  var defaultTitle={"yard-sale":"Yard sale","garden":"Garden goods","farm":"Hay and farm goods"};
+  function ysCard(s){
+    var when=ysRange(s);
+    var times=s.times?esc(s.times):"";
+    var kicker=when+(times?(when?" · ":"")+times:"");
+    var price=s.price?('<p class="yard-sale-price">'+esc(s.price)+'</p>'):'';
+    var loc=s.location?('<p class="yard-sale-loc">'+esc(s.location)+'</p>'):'';
+    var desc=s.description?('<p class="yard-sale-desc">'+esc(s.description)+'</p>'):'';
+    var contact=s.contact?('<p class="yard-sale-contact">'+esc(s.contact)+'</p>'):'';
+    var cat=ysCategory(s);
+    return '<li class="card yard-sale-card"><p class="card-kicker">'+(kicker?kicker:"Listed free")+'</p><h3>'+esc(s.title||defaultTitle[cat])+'</h3>'+price+loc+desc+contact+'</li>';
+  }
+  function ysRender(el, items, cat){
+    if(!el) return;
+    if(!items.length){
+      el.innerHTML='<p class="note yard-sales-empty">'+emptyMsg[cat]+'</p>';
+      return;
+    }
+    el.innerHTML='<ul class="yard-sale-list">'+items.map(ysCard).join("")+'</ul>';
+  }
+  function ysSort(a,b,cat){
+    if(cat==="yard-sale"){
+      var as=a.start||"", bs=b.start||"";
+      if(as!==bs) return as<bs?-1:1;
+    } else {
+      var aa=a.added||"", ba=b.added||"";
+      if(aa!==ba) return aa>ba?-1:1;
+    }
+    var ae=ysUntil(a), be=ysUntil(b);
+    if(ae!==be) return ae<be?-1:1;
+    return String(a.title||"").localeCompare(String(b.title||""));
   }
   fetch(base()+"data/yard-sales.json",{cache:"no-cache"}).then(function(r){
     if(!r.ok) throw 0; return r.json();
   }).then(function(data){
     var today = ysToday();
-    var list = (Array.isArray(data) ? data : (data.listings||[])).filter(function(s){
-      var end = s.end || s.start;
-      return end && String(end) >= today;
-    }).sort(function(a,b){
-      var as=a.start||"", bs=b.start||"";
-      if(as!==bs) return as<bs?-1:1;
-      var ae=a.end||"", be=b.end||"";
-      if(ae!==be) return ae<be?-1:1;
-      return String(a.title||"").localeCompare(String(b.title||""));
+    var all = (Array.isArray(data) ? data : (data.listings||[])).filter(function(s){
+      var until = ysUntil(s);
+      return until && String(until) >= today;
     });
-    if(!list.length){
-      ysEl.innerHTML='<p class="note yard-sales-empty">No yard sales listed right now. If you are having one, send us the details and we will put it up for free.</p>';
-      return;
-    }
-    ysEl.innerHTML='<ul class="yard-sale-list">'+list.map(function(s){
-      var loc=s.location?('<p class="yard-sale-loc">'+esc(s.location)+'</p>'):'';
-      var times=s.times?('<span class="yard-sale-times">'+esc(s.times)+'</span>'):'';
-      var desc=s.description?('<p class="yard-sale-desc">'+esc(s.description)+'</p>'):'';
-      return '<li class="card yard-sale-card"><p class="card-kicker">'+esc(ysRange(s.start,s.end))+(times?' · '+times:'')+'</p><h3>'+esc(s.title||"Yard sale")+'</h3>'+loc+desc+'</li>';
-    }).join("")+'</ul>';
+    ["yard-sale","garden","farm"].forEach(function(cat){
+      var items=all.filter(function(s){return ysCategory(s)===cat;}).sort(function(a,b){return ysSort(a,b,cat);});
+      var el=cat==="garden"?ysGarden:cat==="farm"?ysFarm:ysYard;
+      ysRender(el, items, cat);
+    });
   }).catch(function(){
-    ysEl.innerHTML='<p class="note">The yard sale board isn\'t loading right now. Check back soon, or send us your sale details and we will post it.</p>';
+    var fail='<p class="note">The community board isn\'t loading right now. Check back soon, or send us your details and we will post them.</p>';
+    [ysYard,ysGarden,ysFarm].forEach(function(el){ if(el) el.innerHTML=fail; });
   });
 }
+
 if(window.AOEPlayer) window.AOEPlayer.bindBrief();
 }
 

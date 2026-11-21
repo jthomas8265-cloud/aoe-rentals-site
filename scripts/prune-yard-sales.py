@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""Remove yard-sale listings whose end date is before today in America/Denver.
+"""Remove expired community-board listings (yard sales, garden, farm).
 
-A listing stays up through its end date (inclusive). The public page also
-hides expired entries on the client, so this is the repo cleanup step.
+A listing stays up through its last day (inclusive) in America/Denver.
+Last day is, in order: `end`, then `expires`, then `start` (legacy
+yard sales), then 30 days after `added`. The public page uses the same
+rule, so this is the repo cleanup step.
 
 Usage (from the site repo root):
   python3 scripts/prune-yard-sales.py
@@ -15,7 +17,7 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -34,11 +36,30 @@ def listings_of(data):
     raise ValueError("yard-sales JSON must be an array or an object with a listings array")
 
 
-def is_active(entry, today: str) -> bool:
+def add_days(iso: str, days: int) -> str:
+    return (date.fromisoformat(iso) + timedelta(days=days)).isoformat()
+
+
+def effective_end(entry) -> str | None:
+    """Last visible day, inclusive. Matches the client filter in site.js."""
     if not isinstance(entry, dict):
-        return False
-    end = entry.get("end") or entry.get("start")
-    return bool(end) and str(end) >= today
+        return None
+    for key in ("end", "expires", "start"):
+        value = entry.get(key)
+        if value:
+            return str(value)
+    added = entry.get("added")
+    if not added:
+        return None
+    try:
+        return add_days(str(added), 30)
+    except ValueError:
+        return None
+
+
+def is_active(entry, today: str) -> bool:
+    end = effective_end(entry)
+    return bool(end) and end >= today
 
 
 def prune(path: Path, today: str | None = None) -> tuple[int, int]:
@@ -76,7 +97,7 @@ def main(argv: list[str]) -> int:
         print(f"prune-yard-sales: {exc}", file=sys.stderr)
         return 1
     today = today_denver()
-    print(f"Yard sales pruned for {today} (America/Denver): removed {removed}, {kept} still listed.")
+    print(f"Community board pruned for {today} (America/Denver): removed {removed}, {kept} still listed.")
     return 0
 
 

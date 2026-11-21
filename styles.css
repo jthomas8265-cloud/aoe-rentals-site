@@ -904,3 +904,14 @@ footer {
 .yard-sales-howto p{color:var(--muted);}
 .yard-sales-howto .check{margin:.7rem 0 0;}
 .yard-sales-howto .check a{font-weight:600;}
+
+.yard-sale-price{margin:.2rem 0 0;color:var(--accent);font-weight:700;}
+.yard-sale-contact{margin:.35rem 0 0;color:var(--text);}
+.board-jump{margin:-.4rem 0 1.4rem;color:var(--muted);}
+.board-jump a{font-weight:600;}
+.board-section{margin:0 0 1.8rem;}
+.board-section h2,.board-section h3{font-family:var(--display);letter-spacing:.03em;margin:0 0 .25rem;color:var(--accent2);}
+.board-section h2{font-size:1.7rem;}
+.board-section h3{font-size:1.35rem;}
+.board-lead{margin:0 0 .7rem;color:var(--muted);}
+.community-board .board-section{margin-bottom:1.2rem;}
